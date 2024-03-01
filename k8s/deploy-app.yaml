@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: deliveryapp
+  name: deliveryapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deliveryapp
+  template:
+    metadata:
+      labels:
+        app: deliveryapp
+    spec:
+      containers:
+      - name: deliveryapp
+        image: myRepoDocker/deliveryapp:latest

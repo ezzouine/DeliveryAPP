@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: deliveryapp-service
+  labels:
+    app: deliveryapp-service
+spec:
+  ports:
+  - name: deliveryapp-service
+    port: 8080
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: deliveryapp
+  type: ClusterIP

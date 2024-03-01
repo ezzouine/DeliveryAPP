@@ -1,0 +1,64 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: Delivery-Application-Service
+  main:
+     allow-bean-definition-overriding: true
+     allow-circular-references: true
+     
+  kafka:
+    bootstrap-servers: localhost:9092
+    kafka-producer-enabled: false
+    
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: test
+    password: test
+    driverClassName: org.h2.Driver
+  h2:
+    console.enabled: true
+  jpa:
+    show-sql: false
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    
+springdoc:
+  api-docs:
+    enabled: true # to disable in prod env
+  packages-to-scan:
+  - com.delivery.api
+  swagger-ui:
+    csrf:
+      enabled: true
+    
+swagger:
+  title: Delivery-Application-Service
+  description: This page lists all the rest apis for Delivery-Application-Service App.
+  version: 0.0.1
+  contact-name: EZZOUINE Mohammed
+  contact-url: www.delivery-app.ma
+  contact-email: delivery-app@gmail.com
+  
+cors:
+  allowedAdresses: ${CORS_ALLOWED_ADDRESSES:http://localhost:8080, http://localhost:4200}
+  
+info:
+  stage: Dev stage
+  topic: DELIVERY APPLICATION
+  service: ${spring.application.name}
+  version: 0.1
+
+
+management:                   
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: true
+      
+
+    

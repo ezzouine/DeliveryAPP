@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: deliveryapp-service-ingress
+spec:
+  rules:
+  - host: delivery-app.com
+    http:
+      paths:
+      - backend:
+          serviceName: deliveryapp-service
+          servicePort: 8080
+        path: /
+
