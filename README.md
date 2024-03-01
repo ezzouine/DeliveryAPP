@@ -1,4 +1,4 @@
-# Java kata - Delivery APP
+# Java - Delivery APP
 
 Cette application est une implémentation d'un système de gestion de livraison.
 
